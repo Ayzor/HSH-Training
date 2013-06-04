@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## Generated CouchApp
 
 This is meant to be an example CouchApp and to ship with most of the CouchApp goodies.
@@ -32,8 +32,5 @@ Deprecated: *couchapp generate proto && cd proto*
 ## License
 
 Apache 2.0
-=======
-HSH-Training
-============
-HSH -Training
->>>>>>> 511ac3a9081eaa4585af74a3a2c09444cb9e2e08
+
+
