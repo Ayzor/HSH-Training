@@ -4,73 +4,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-  <script src="js/bootstrap.js"></script>
+  <!-- // <script src="js/bootstrap.min.js"></script> -->
+  <!-- // <script src="validation.js"></script> -->
 <title>Welcome</title>
 </head>
 <body class="container">
   <h1>Welcome to HSH-Global</h1>
   
 
-  <form class ="form-horizontal">
+  <form class ="form-horizontal"   >
     
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputName">Name</label>
       <div class="controls">
         <input type="text" id="inputName" placeholder="Name">
+        <span class= "help-inline hidden">Please enter your name</span>
       </div>
     </div>
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputAge">Age</label>
       <div class="controls">
         <input type="text" id="inputAge" placeholder="Age">
+        <span class= "help-inline hidden">Please enter your age</span>
       </div>
     </div>
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputGender">Gender</label>
       <div class="controls">
-        <input type="text" id="inputGender" placeholder="Gender">
+
+       <select id = "genderSelect">
+          <option value='1'>Male</option>
+          <option value='2'>Female</option>
+       </select>
       </div>                                          
     </div>
 
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputDescription">Description</label>
       <div class="controls">
         <input type="text" id="inputDescription" placeholder="Description">
+        <span class= "help-inline hidden">Please write a description </span>
       </div>
     </div>
 
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputProvince">Province</label>
       <div class="controls">
-        <input type="text" id="inputProvince" placeholder="Province">
+
+        <select id = "provinceSelect">
+          <option value='1'>Western Cape</option>
+          <option value='2'>Eastern Cape</option>
+          <option value='3'>Kwa Zulu Natal</option>
+          <option value='4'>Free State</option>
+        </select>
       </div>
     </div>
 
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputCity">City</label>
       <div class="controls">
-        <input type="text" id="inputCity" placeholder="City">
+
+        <select id = "citySelect">
+          <option value='1'>Cape Town</option>
+          <option value='2'>Port Elizabeth</option>
+          <option value='3'>Durban</option>
+          <option value='4'>Bethlehem</option>
+        </select>
+
       </div>
     </div>
 
 
-    <div class= "control-group">
+    <div class= "control-group error">
       <label class="control-label" for="inputState">State</label>
       <div class="controls">
-        <input type="text" id="inputState" placeholder="State">
+
+        <select id = "stateSelect">
+          <option value='1'>Cape Point</option>
+          <option value='2'>Bhisho</option>
+          <option value='3'>Mlazi</option>
+          <option value='4'>Ficksburg</option>
+        </select>
+
       </div>
     </div>
 
 
-    <div class= "control-group">
-      <label class="control-label" for="inputCountry">Country</label>
+    <div class= "control-group error">
+      <label class="control-label" for="inputCountry" >Country</label>
       <div class="controls">
-        <input type="text" id="inputCountry" placeholder="Country">
+        
+        <select id = "countrySelect">
+          <option value='1'>South Africa</option>
+          <option value='2'>Botswana</option>
+          <option value='3'>Zambia</option>
+          <option value='4'>Angola</option>
+        </select>
       </div>
     </div>
 
@@ -80,7 +114,53 @@
         <button type="submit" class="btn">Submit </button>
       </div>
     </div>
+
   </form>
 
 </body>
+
+<script src="js/loader.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+$('.btn').click(function() {
+
+var name = $("input#inputName").val()
+var age = $("input#inputAge").val()
+
+/*$("genderSelect").change(function(){
+  if($(this).val()=="0"){
+    $(this).removeClass("empty");
+  }
+});
+
+var gender= $("#genderSelect").change();*/
+
+/*
+var description =$("input#inputDescription").val()
+var province =$("input#inputProvince").val()
+var city =$("input#inputCity").val()
+var state =$("input#inputState").val()
+var country =$("input#inputCountry").val()*/
+
+if(name != " "){
+  $(".help-inline").removeClass("hidden");
+ 
+}
+
+else if(age!= " "){
+  $(".help-inline").removeClass("hidden");
+}
+
+// else if(gender)
+
+else if(description !=" "){
+  $(".help-inline").removeClass("hidden");
+}
+
+
+return false;
+}); 
+
+</script>
 </html>
