@@ -8,9 +8,11 @@
   <!-- // <script src="validation.js"></script> -->
 <title>Welcome</title>
 </head>
-<body class="container">
+<body class="container-fluid">
   <h1>Welcome to HSH-Global</h1>
   
+<div class="row-fluid">
+<div class="span6">
 
   <form class ="form-horizontal"   >
     
@@ -114,9 +116,20 @@
         <button type="submit" class="btn">Submit </button>
       </div>
     </div>
-
   </form>
+</div>
 
+<div class="span6">
+  <div  id="contentArea">
+
+    <p>hello</p>
+
+    </div>
+</div>
+</div>
+
+
+  
 </body>
 
 <script src="js/loader.js"></script>
@@ -125,8 +138,9 @@
 
 $('.btn').click(function() {
 
-var name = $("input#inputName").val()
-var age = $("input#inputAge").val()
+var name = $("input#inputName").val();
+var age = $("input#inputAge").val();
+var description =$("input#inputDescription").val();
 
 /*$("genderSelect").change(function(){
   if($(this).val()=="0"){
@@ -137,7 +151,6 @@ var age = $("input#inputAge").val()
 var gender= $("#genderSelect").change();*/
 
 /*
-var description =$("input#inputDescription").val()
 var province =$("input#inputProvince").val()
 var city =$("input#inputCity").val()
 var state =$("input#inputState").val()
@@ -159,8 +172,19 @@ else if(description !=" "){
 }
 
 
+
+function display(){
+
+  document.write(name);
+  document.write(age);
+  document.write(description);
+
+});
+
+
 return false;
 }); 
 
 </script>
+
 </html>
