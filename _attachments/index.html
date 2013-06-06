@@ -20,7 +20,7 @@
       <label class="control-label" for="inputName">Name</label>
       <div class="controls">
         <input type="text" id="inputName" placeholder="Name">
-        <span class= "help-inline hidden">Please enter your name</span>
+        <span class= "help-inline hName hidden">Please enter your name</span>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
       <label class="control-label" for="inputAge">Age</label>
       <div class="controls">
         <input type="text" id="inputAge" placeholder="Age">
-        <span class= "help-inline hidden">Please enter your age</span>
+        <span class= "help-inline hAge hidden">Please enter your age</span>
       </div>
     </div>
 
@@ -37,8 +37,9 @@
       <div class="controls">
 
        <select id = "genderSelect">
-          <option value='1'>Male</option>
-          <option value='2'>Female</option>
+        <option  >Gender</option>
+          <option value='Male' >Male</option>
+          <option value='Female'>Female</option>
        </select>
       </div>                                          
     </div>
@@ -48,7 +49,7 @@
       <label class="control-label" for="inputDescription">Description</label>
       <div class="controls">
         <input type="text" id="inputDescription" placeholder="Description">
-        <span class= "help-inline hidden">Please write a description </span>
+        <span class= "help-inline hDesc hidden">Please write a description </span>
       </div>
     </div>
 
@@ -58,10 +59,11 @@
       <div class="controls">
 
         <select id = "provinceSelect">
-          <option value='1'>Western Cape</option>
-          <option value='2'>Eastern Cape</option>
-          <option value='3'>Kwa Zulu Natal</option>
-          <option value='4'>Free State</option>
+          <option>Province</option>
+          <option value='Western Cape'>Western Cape</option>
+          <option value='Eastern Cape'>Eastern Cape</option>
+          <option value='KwaZulu Natal'>Kwa Zulu Natal</option>
+          <option value='Free State'>Free State</option>
         </select>
       </div>
     </div>
@@ -72,10 +74,11 @@
       <div class="controls">
 
         <select id = "citySelect">
-          <option value='1'>Cape Town</option>
-          <option value='2'>Port Elizabeth</option>
-          <option value='3'>Durban</option>
-          <option value='4'>Bethlehem</option>
+          <option>City</option>
+          <option value='Cape Town'>Cape Town</option>
+          <option value='Port Elizabeth'>Port Elizabeth</option>
+          <option value='Durban'>Durban</option>
+          <option value='Bethlehem'>Bethlehem</option>
         </select>
 
       </div>
@@ -87,10 +90,11 @@
       <div class="controls">
 
         <select id = "stateSelect">
-          <option value='1'>Cape Point</option>
-          <option value='2'>Bhisho</option>
-          <option value='3'>Mlazi</option>
-          <option value='4'>Ficksburg</option>
+          <option>State</option>
+          <option value='Cape Point'>Cape Point</option>
+          <option value='Bhisho'>Bhisho</option>
+          <option value='Mlazi'>Mlazi</option>
+          <option value='Ficksburg'>Ficksburg</option>
         </select>
 
       </div>
@@ -102,11 +106,13 @@
       <div class="controls">
         
         <select id = "countrySelect">
-          <option value='1'>South Africa</option>
-          <option value='2'>Botswana</option>
-          <option value='3'>Zambia</option>
-          <option value='4'>Angola</option>
+          <option>Country</option>
+          <option value='South Africa'>South Africa</option>
+          <option value='Botswana'>Botswana</option>
+          <option value='Zambia'>Zambia</option>
+          <option value='Angola'>Angola</option>
         </select>
+
       </div>
     </div>
 
@@ -122,14 +128,52 @@
 <div class="span6">
   <div  id="contentArea">
 
-    <p>hello</p>
+   <ul class="inline">
+    <li>Name:</li>
+    <li id ="nameLbl"></li>
+  </ul>
 
-    </div>
+
+  <ul class="inline">
+    <li>Age:</li>
+    <li id ="ageLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>Gender:</li>
+    <li id ="genderLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>Description:</li>
+    <li id ="descLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>Province:</li>
+    <li id ="provinceLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>City:</li>
+    <li id ="cityLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>State:</li>
+    <li id ="stateLbl"></li>
+  </ul>
+
+  <ul class="inline">
+    <li>Country:</li>
+    <li id ="countryLbl"></li>
+  </ul>
+
+      </div>
+  </div>
 </div>
-</div>
 
 
-  
 </body>
 
 <script src="js/loader.js"></script>
@@ -138,49 +182,40 @@
 
 $('.btn').click(function() {
 
+//Retrieve the contents of form elements.
 var name = $("input#inputName").val();
 var age = $("input#inputAge").val();
+var gender = $("#genderSelect").val();
 var description =$("input#inputDescription").val();
+var province =$("#provinceSelect").val();
+var city =$("#citySelect").val();
+var state=$("#stateSelect").val();
+var country=$("#countrySelect").val();
 
-/*$("genderSelect").change(function(){
-  if($(this).val()=="0"){
-    $(this).removeClass("empty");
-  }
-});
 
-var gender= $("#genderSelect").change();*/
 
-/*
-var province =$("input#inputProvince").val()
-var city =$("input#inputCity").val()
-var state =$("input#inputState").val()
-var country =$("input#inputCountry").val()*/
-
-if(name != " "){
-  $(".help-inline").removeClass("hidden");
+if(name == null){
+  $(".hName").removeClass("hidden")
  
 }
-
-else if(age!= " "){
-  $(".help-inline").removeClass("hidden");
+else if(age ==null){
+  $(".hAge").removeClass("hidden")
 }
 
-// else if(gender)
-
-else if(description !=" "){
-  $(".help-inline").removeClass("hidden");
+else if(description == null){
+  $(".hDesc").removeClass("hidden")
 }
 
 
-
-function display(){
-
-  document.write(name);
-  document.write(age);
-  document.write(description);
-
-});
-
+//Display the contents of the form elements.
+$("#nameLbl").text(name);
+$("#ageLbl").text(age);
+$("#genderLbl").text(gender);
+$("#descLbl").text(description);
+$("#provinceLbl").text(province);
+$("#cityLbl").text(city);
+$("#stateLbl").text(state);
+$("#countryLbl").text(country);
 
 return false;
 }); 
@@ -188,3 +223,6 @@ return false;
 </script>
 
 </html>
+
+
+
