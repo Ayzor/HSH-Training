@@ -37,7 +37,7 @@
       <div class="controls">
 
        <select id = "genderSelect">
-        <option  >Gender</option>
+        <option value='Gender' >Gender</option>
           <option value='Male' >Male</option>
           <option value='Female'>Female</option>
        </select>
@@ -59,7 +59,7 @@
       <div class="controls">
 
         <select id = "provinceSelect">
-          <option>Province</option>
+          <option value='Province'>Province</option>
           <option value='Western Cape'>Western Cape</option>
           <option value='Eastern Cape'>Eastern Cape</option>
           <option value='KwaZulu Natal'>Kwa Zulu Natal</option>
@@ -74,7 +74,7 @@
       <div class="controls">
 
         <select id = "citySelect">
-          <option>City</option>
+          <option value='City'>City</option>
           <option value='Cape Town'>Cape Town</option>
           <option value='Port Elizabeth'>Port Elizabeth</option>
           <option value='Durban'>Durban</option>
@@ -90,7 +90,7 @@
       <div class="controls">
 
         <select id = "stateSelect">
-          <option>State</option>
+          <option value='State'>State</option>
           <option value='Cape Point'>Cape Point</option>
           <option value='Bhisho'>Bhisho</option>
           <option value='Mlazi'>Mlazi</option>
@@ -106,7 +106,7 @@
       <div class="controls">
         
         <select id = "countrySelect">
-          <option>Country</option>
+          <option value="Country">Country</option>
           <option value='South Africa'>South Africa</option>
           <option value='Botswana'>Botswana</option>
           <option value='Zambia'>Zambia</option>
@@ -131,42 +131,49 @@
    <ul class="inline">
     <li>Name:</li>
     <li id ="nameLbl"></li>
+    <li><button type="button" class="btn btn-primary btnName" >Edit</button></li>
   </ul>
 
 
   <ul class="inline">
     <li>Age:</li>
     <li id ="ageLbl"></li>
+    <li><button type="button" class="btn btn-primary btnAge">Edit</button></li>
   </ul>
 
   <ul class="inline">
     <li>Gender:</li>
     <li id ="genderLbl"></li>
+    <li><button type="button" class="btn btn-primary btnGender" >Edit</button></li>
   </ul>
 
   <ul class="inline">
-    <li>Description:</li>
-    <li id ="descLbl"></li>
+    <li>Description:</li> 
+    <li><button type="button" class="btn btn-primary btnDesc">Edit</button></li>
   </ul>
 
   <ul class="inline">
     <li>Province:</li>
     <li id ="provinceLbl"></li>
+    <li><button type="button" class="btn btn-primary btnProv">Edit</button></li>
   </ul>
 
   <ul class="inline">
     <li>City:</li>
     <li id ="cityLbl"></li>
+    <li><button type="button" class="btn btn-primary btnCity">Edit</button></li>
   </ul>
 
   <ul class="inline">
     <li>State:</li>
     <li id ="stateLbl"></li>
+    <li><button type="button" class="btn btn-primary btnState">Edit</button></li>
   </ul>
 
   <ul class="inline">
     <li>Country:</li>
     <li id ="countryLbl"></li>
+    <li><button type="button" class="btn btn-primary btnCountry">Edit</button></li>
   </ul>
 
       </div>
@@ -178,6 +185,7 @@
 
 <script src="js/loader.js"></script>
 <script type="text/javascript" charset="utf-8">
+
 
 
 $('.btn').click(function() {
@@ -193,21 +201,22 @@ var state=$("#stateSelect").val();
 var country=$("#countrySelect").val();
 
 
-
+/*Display an Error text massage if user omited 
+  to input data in form fields*/ 
 if(name == null){
-  $(".hName").removeClass("hidden")
+  $('.hName').removeClass("hidden")
  
 }
 else if(age ==null){
-  $(".hAge").removeClass("hidden")
+  $('.hAge').removeClass("hidden")
 }
 
 else if(description == null){
-  $(".hDesc").removeClass("hidden")
+  $('.hDesc').removeClass("hidden")
 }
 
 
-//Display the contents of the form elements.
+//Display the contents of the form fields.
 $("#nameLbl").text(name);
 $("#ageLbl").text(age);
 $("#genderLbl").text(gender);
@@ -216,9 +225,34 @@ $("#provinceLbl").text(province);
 $("#cityLbl").text(city);
 $("#stateLbl").text(state);
 $("#countryLbl").text(country);
+return false
 
-return false;
 }); 
+
+ $('.btnName').click(function(){
+
+  
+  var names =$("#nameLbl").text();
+  $("input#inputName").val(names);
+
+
+});
+
+
+ $('.btnAge').click(function(){
+
+  var ages =$("#ageLbl").text();
+  $("input#inputAge").val(ages);
+
+ });
+
+
+ $('.btnDesc').click(function(){
+
+  var descr =$("#descLbl").text();
+  $("input#inputDescription").val(descr);
+
+ });
 
 </script>
 
